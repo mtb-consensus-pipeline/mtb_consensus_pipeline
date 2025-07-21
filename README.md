@@ -36,14 +36,16 @@ wget -O H37Rv_v3.fasta "https://www.ncbi.nlm.nih.gov/search/api/sequence/4488147
 ## Pipeline steps
 
 The pipeline consists of the following steps:
-	1.	Alignment: Paired-end FASTQ reads are aligned to the reference genome using minimap2.
-	2.	Sorting and indexing: The alignments are sorted and indexed using samtools.
-	3.	Variant calling: Variants are called with bcftools mpileup and call, producing a VCF file.
-	4.	Consensus generation: A consensus FASTA file is generated from the VCF and reference using bcftools consensus.
+
+1. **Alignment:** Paired-end FASTQ reads are aligned to the reference genome using minimap2.
+2. **Sorting and indexing:** The alignments are sorted and indexed using samtools.
+3. **Variant calling:** Variants are called with bcftools mpileup and call, producing a VCF file.
+4. **Consensus generation:** A consensus FASTA file is generated from the VCF and reference using bcftools consensus.
 
 
 ## Usage
 
+```bash
 nextflow run main.nf \
   --reads_dir data/fastq \
   --reference data/reference/H37Rv_v3.fasta \
@@ -55,6 +57,6 @@ Note: This pipeline has been developed against Nextflow 25.04.6 and tested with 
 
 ## Note on input
 
-This pipeline is designed to process a single sample at a time.
-Please ensure that only one pair of FASTQ files (forward and reverse) is present in the input directory.
+This pipeline is designed to process a single sample at a time.  
+Please ensure that only one pair of FASTQ files (forward and reverse) is present in the input directory.  
 If multiple samples are present, only the first will be processed and the output may be overwritten.
