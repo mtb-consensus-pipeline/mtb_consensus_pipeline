@@ -31,9 +31,19 @@ H37Rv_v3.fasta
 
 You can download the H37Rv version 3 reference genome (NCBI accession 448814763) as follows:
 
-```bash
-wget -O H37Rv_v3.fasta "https://www.ncbi.nlm.nih.gov/search/api/sequence/448814763/?report=fasta"
-```
+## Downloading the reference genome
+
+You can obtain the H37Rv version 3 reference genome (NCBI accession NC_000962.3) in FASTA format as follows:
+
+- **Manually:**  
+  Go to [https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3?report=fasta](https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3?report=fasta),  
+  then click "Send to" > "File" > "Create file" to download the FASTA.
+
+- **(Optional) Using Entrez Direct:**  
+  If you have [Entrez Direct](https://www.ncbi.nlm.nih.gov/books/NBK179288/) installed, you can use:
+  ```bash
+  efetch -db nucleotide -id NC_000962.3 -format fasta > H37Rv_v3.fasta
+  ```
 
 ## Pipeline steps
 
