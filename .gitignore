@@ -1,2 +1,11 @@
 work/
 .nextflow.log*
+*.bam
+*.bai
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.fasta
+*.fa
+*.fastq
+*.fastq.gz
