@@ -17,10 +17,20 @@ Channel
     .fromFilePairs("${params.reads_dir}/*_{1,2}.fastq.gz", flat: true)
     .set { read_pairs }
 
+// Check that there is only one sample in the input directory
+read_pairs
+    .ifEmpty { error "No FASTQ pairs found in input directory." }
+    .view { pairs -> 
+        if (pairs.size() > 1) {
+            error "More than one sample detected in the input directory. Please provide only one sample."
+        }
+    }
+
 /////////////////////////////////////////
 // Align reads and sort BAM
 /////////////////////////////////////////
 process ALIGN {
+    // Align paired-end reads to the reference genome and sort/index the BAM file
     tag "$sample_id"
 
     input:
@@ -43,6 +53,7 @@ process ALIGN {
 // Call variants: produce bgzipped VCF + .tbi index
 /////////////////////////////////////////
 process CALL_VARIANTS {
+    // Call variants using bcftools, output compressed VCF and index
     tag "$sample_id"
 
     input:
@@ -64,6 +75,7 @@ process CALL_VARIANTS {
 // Generate consensus
 /////////////////////////////////////////
 process CONSENSUS {
+    // Generate consensus FASTA from reference and VCF
     tag "$sample_id"
 
     input:
