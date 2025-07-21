@@ -31,6 +31,7 @@ You can download the H37Rv version 3 reference genome (NCBI accession 448814763)
 
 ```bash
 wget -O H37Rv_v3.fasta "https://www.ncbi.nlm.nih.gov/search/api/sequence/448814763/?report=fasta"
+```
 
 ## Pipeline steps
 
@@ -51,6 +52,7 @@ nextflow run main.nf \
 cd ~/mtb_consensus_pipeline
 
 Note: This pipeline has been developed against Nextflow 25.04.6 and tested with minimap2 v2.30, samtools/bcftools v1.22.
+```
 
 ## Note on input
 
