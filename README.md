@@ -33,7 +33,7 @@ You can download the H37Rv version 3 reference genome (NCBI accession 448814763)
 wget -O H37Rv_v3.fasta "https://www.ncbi.nlm.nih.gov/search/api/sequence/448814763/?report=fasta"
 
 
-Pipeline steps
+## Pipeline steps
 
 The pipeline consists of the following steps:
 	1.	Alignment: Paired-end FASTQ reads are aligned to the reference genome using minimap2.
@@ -42,7 +42,7 @@ The pipeline consists of the following steps:
 	4.	Consensus generation: A consensus FASTA file is generated from the VCF and reference using bcftools consensus.
 
 
-Usage
+## Usage
 
 nextflow run main.nf \
   --reads_dir data/fastq \
@@ -53,7 +53,7 @@ cd ~/mtb_consensus_pipeline
 Note: This pipeline has been developed against Nextflow 25.04.6 and tested with minimap2 v2.30, samtools/bcftools v1.22.
 
 
-Note on input
+## Note on input
 
 This pipeline is designed to process a single sample at a time.
 Please ensure that only one pair of FASTQ files (forward and reverse) is present in the input directory.
