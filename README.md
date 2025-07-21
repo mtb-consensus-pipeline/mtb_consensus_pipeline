@@ -29,10 +29,6 @@ H37Rv_v3.fasta
 
 ## Downloading the reference genome
 
-You can download the H37Rv version 3 reference genome (NCBI accession 448814763) as follows:
-
-## Downloading the reference genome
-
 You can obtain the H37Rv version 3 reference genome (NCBI accession NC_000962.3) in FASTA format as follows:
 
 - **Manually:**  
