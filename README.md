@@ -1,4 +1,4 @@
-# M. tuberculosis consensus pipeline
+# M. tuberculosis Consensus Pipeline
 
 This Nextflow pipeline maps paired-end FASTQ reads to the M. tuberculosis H37Rv v3 reference,
 calls variants and produces a consensus FASTA.
