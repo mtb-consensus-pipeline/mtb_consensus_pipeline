@@ -59,3 +59,5 @@ Note: This pipeline has been developed against Nextflow 25.04.6 and tested with 
 This pipeline is designed to process a single sample at a time.  
 Please ensure that only one pair of FASTQ files (forward and reverse) is present in the input directory.  
 If multiple samples are present, only the first will be processed and the output may be overwritten.
+
+*Submitted by Basma Baqqali, July 2025*
